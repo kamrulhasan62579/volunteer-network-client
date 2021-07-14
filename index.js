@@ -40,6 +40,7 @@ client.connect(err => {
       })
     })
     app.get('/regis/:email', (req, res) =>{
+      console.log(req.query.email)
       regDataCollection.find({email: req.query.email})
       .toArray((err, documents) =>{
         res.send(documents)
